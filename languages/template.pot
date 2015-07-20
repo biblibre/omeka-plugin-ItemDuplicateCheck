@@ -1,0 +1,55 @@
+# Translation for the Item Duplicate Check plugin for Omeka.
+# Copyright (C) 2015 BibLibre
+# This file is distributed under the same license as the Omeka package.
+# Julian Maurice <julian.maurice@biblibre.com>, 2015
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Item Duplicate Check\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-20 11:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ItemDuplicateCheckPlugin.php:88
+msgid "Found duplicate items"
+msgstr ""
+
+#: ItemDuplicateCheckPlugin.php:96
+msgid "Item Duplicate Check"
+msgstr ""
+
+#: views/admin/rules/add.php:1 views/admin/rules/list.php:4
+msgid "Add a new rule"
+msgstr ""
+
+#: views/admin/rules/add.php:43 views/admin/rules/edit.php:47
+msgid "Save"
+msgstr ""
+
+#: views/admin/rules/edit.php:1
+msgid "Edit rule"
+msgstr ""
+
+#: views/admin/rules/delete.php:1
+msgid "Delete rule"
+msgstr ""
+
+#: views/admin/rules/delete.php:10
+#, php-format
+msgid "Are you sure you want to delete rule %1$s (%2$s) ?"
+msgstr ""
+
+#: views/admin/rules/list.php:1
+msgid "Rules"
+msgstr ""
+
+#: views/admin/rules/list.php:12
+msgid "Actions"
+msgstr ""

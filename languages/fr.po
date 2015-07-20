@@ -1,0 +1,55 @@
+# Translation for the Item Duplicate Check plugin for Omeka.
+# Copyright (C) 2015 BibLibre
+# This file is distributed under the same license as the Omeka package.
+# Julian Maurice <julian.maurice@biblibre.com>, 2015
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Item Duplicate Check\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-20 11:54+0200\n"
+"PO-Revision-Date: 2015-07-20 12:06+0200\n"
+"Last-Translator: Julian Maurice <julian.maurice@biblibre.com>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ItemDuplicateCheckPlugin.php:88
+msgid "Found duplicate items"
+msgstr "Contenus en doublon trouvés"
+
+#: ItemDuplicateCheckPlugin.php:96
+msgid "Item Duplicate Check"
+msgstr "Contrôle de contenu doublon"
+
+#: views/admin/rules/add.php:1 views/admin/rules/list.php:4
+msgid "Add a new rule"
+msgstr "Ajouter une règle"
+
+#: views/admin/rules/add.php:43 views/admin/rules/edit.php:47
+msgid "Save"
+msgstr "Enregistrer"
+
+#: views/admin/rules/edit.php:1
+msgid "Edit rule"
+msgstr "Modifier la règle"
+
+#: views/admin/rules/delete.php:1
+msgid "Delete rule"
+msgstr "Supprimer la règle"
+
+#: views/admin/rules/delete.php:10
+#, php-format
+msgid "Are you sure you want to delete rule %1$s (%2$s) ?"
+msgstr "Êtes-vous sûr de vouloir supprimer la règle %1$s (%2$s) ?"
+
+#: views/admin/rules/list.php:1
+msgid "Rules"
+msgstr "Règles"
+
+#: views/admin/rules/list.php:12
+msgid "Actions"
+msgstr "Actions"
