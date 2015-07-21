@@ -6,7 +6,7 @@ class ItemDuplicateCheckPlugin extends Omeka_Plugin_AbstractPlugin
         'install',
         'uninstall',
         'initialize',
-        'before_save_item',
+        'define_routes',
     );
 
     protected $_filters = array(
@@ -40,53 +40,32 @@ class ItemDuplicateCheckPlugin extends Omeka_Plugin_AbstractPlugin
         add_translation_source(dirname(__FILE__) . '/languages');
     }
 
-    public function hookBeforeSaveItem($args)
+    /**
+     * Overrides /items/add and /items/edit/:id paths
+     */
+    public function hookDefineRoutes($args)
     {
-        error_log('before_save_item');
-        $item = $args['record'];
-        $post = $args['post'];
-        $db = $this->_db;
+        if (!is_admin_theme()) {
+            return;
+        }
 
-        $rules = $db->getTable('ItemDuplicateCheckRule')->findAll();
-        foreach ($rules as $rule) {
-            if ($rule->item_type_id && $item->item_type_id != $rule->item_type_id) {
-                continue;
-            }
-
-            $elements = $rule->getElements();
-            if (empty($elements)) {
-                continue;
-            }
-
-            $select = $db
-                ->select()
-                ->from(array('i' => $db->Item), array('item_id' => 'id'));
-
-            foreach ($elements as $element) {
-                $element_id = $element->id;
-
-                foreach ($post['Elements'][$element_id] as $value) {
-                    $text = $value['text'];
-                    if (function_exists('element_types_format')) {
-                        $text = element_types_format($element_id, $text);
-                    }
-
-                    $select->joinLeft(
-                        array("et_$element_id" => $db->ElementText),
-                        "i.id = et_{$element_id}.record_id AND et_{$element_id}.record_type = 'Item' AND et_{$element_id}.element_id = {$element_id}"
-                    );
-
-                    $select->where("et_{$element_id}.text = ?", $text);
-                }
-            }
-
-            if ($item->id) {
-                $select->where("i.id != ?", $item->id);
-            }
-            $item_ids = $db->fetchCol($select);
-            if (!empty($item_ids)) {
-                $item->addError(null, __("Found duplicate items") . ' (ids: ' . implode(', ', $item_ids) . ')');
-            }
+        $router = $args['router'];
+        $paths = array(
+            'add' => '/items/add',
+            'edit' => '/items/edit/:id',
+        );
+        foreach (array('add', 'edit') as $action) {
+            $router->addRoute(
+                "item_duplicate_check_items_$action",
+                new Zend_Controller_Router_Route(
+                    $paths[$action],
+                    array(
+                        'module' => 'item-duplicate-check',
+                        'controller' => 'items',
+                        'action' => $action,
+                    )
+                )
+            );
         }
     }
 
