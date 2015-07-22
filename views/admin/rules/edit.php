@@ -32,7 +32,7 @@
                         <?php foreach ($elements as $element): ?>
                             <?php $selected = in_array($element->id, $rule_element_ids); ?>
                             <option value="<?php echo $element->id; ?>" <?php if ($selected) { echo 'selected="selected"'; } ?>>
-                                <?php echo $element->name; ?>
+                                <?php echo $element->getElementSet()->name . ' : ' . $element->name; ?>
                             </option>
                         <?php endforeach; ?>
                     </select>

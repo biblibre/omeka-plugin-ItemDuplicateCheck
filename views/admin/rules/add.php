@@ -29,7 +29,7 @@
                     <select id="element_ids" name="element_ids[]" multiple="multiple" size="10">
                         <?php foreach ($elements as $element): ?>
                             <option value="<?php echo $element->id; ?>">
-                                <?php echo $element->name; ?>
+                                <?php echo $element->getElementSet()->name . ' : ' . $element->name; ?>
                             </option>
                         <?php endforeach; ?>
                     </select>

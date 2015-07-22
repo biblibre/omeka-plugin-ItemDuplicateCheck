@@ -77,8 +77,11 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
 
     protected function _getElements()
     {
-        return get_db()
-            ->getTable('Element')
-            ->findAll();
+        $db = get_db();
+        $table = $db->getTable('Element');
+        $select = $table->getSelect();
+        $select->order('elements.element_set_id ASC');
+        $select->order('elements.name ASC');
+        return $table->fetchObjects($select);
     }
 }
