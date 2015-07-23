@@ -3,8 +3,12 @@
     $('form#item-form').submit(function() {
       var form = $(this);
 
+      var ignore = form.find('[name="item_duplicate_check_ignore"]').is(':checked');
+
+      $('#item_duplicate_check').remove();
+
       // Don't check for duplicates if checkbox is checked
-      if (form.find('[name="item_duplicate_check_ignore"]').is(':checked')) {
+      if (ignore) {
         return true;
       }
 
@@ -30,7 +34,6 @@
           return;
         }
 
-        $('#item_duplicate_check').remove();
         $(data).insertBefore('#item-metadata');
         window.scroll(0, 0);
       });
