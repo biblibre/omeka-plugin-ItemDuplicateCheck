@@ -6,7 +6,7 @@ class ItemDuplicateCheckPlugin extends Omeka_Plugin_AbstractPlugin
         'install',
         'uninstall',
         'initialize',
-        'define_routes',
+        'admin_head',
     );
 
     protected $_filters = array(
@@ -40,33 +40,10 @@ class ItemDuplicateCheckPlugin extends Omeka_Plugin_AbstractPlugin
         add_translation_source(dirname(__FILE__) . '/languages');
     }
 
-    /**
-     * Overrides /items/add and /items/edit/:id paths
-     */
-    public function hookDefineRoutes($args)
+    public function hookAdminHead()
     {
-        if (!is_admin_theme()) {
-            return;
-        }
-
-        $router = $args['router'];
-        $paths = array(
-            'add' => '/items/add',
-            'edit' => '/items/edit/:id',
-        );
-        foreach (array('add', 'edit') as $action) {
-            $router->addRoute(
-                "item_duplicate_check_items_$action",
-                new Zend_Controller_Router_Route(
-                    $paths[$action],
-                    array(
-                        'module' => 'item-duplicate-check',
-                        'controller' => 'items',
-                        'action' => $action,
-                    )
-                )
-            );
-        }
+        queue_js_file('item_duplicate_check');
+        queue_js_string('Omeka.WEB_DIR = ' . js_escape(WEB_DIR) . ';');
     }
 
     public function filterAdminNavigationMain($nav)
@@ -77,4 +54,64 @@ class ItemDuplicateCheckPlugin extends Omeka_Plugin_AbstractPlugin
         );
         return $nav;
     }
+}
+
+function item_duplicate_check_get_duplicates($item)
+{
+    $db = get_db();
+    $rules = $db->getTable('ItemDuplicateCheckRule')->findAll();
+
+    $duplicates = array();
+    foreach ($rules as $rule) {
+        if ($rule->item_type_id && $item->item_type_id != $rule->item_type_id) {
+            continue;
+        }
+
+        $elements = $rule->getElements();
+        if (empty($elements)) {
+            continue;
+        }
+
+        $select = $db
+            ->select()
+            ->from(array('i' => $db->Item), array('item_id' => 'id'));
+
+        $joins_added = array();
+        foreach ($elements as $element) {
+            $element_id = $element->id;
+
+            foreach ($item['Elements'][$element_id] as $value) {
+                $text = $value['text'];
+                if (0 == strlen(trim($text))) {
+                    continue;
+                }
+                if (function_exists('element_types_format')) {
+                    $text = element_types_format($element_id, $text);
+                }
+
+                if (!isset($joins_added[$element_id])) {
+                    $select->joinLeft(
+                        array("et_$element_id" => $db->ElementText),
+                        "i.id = et_{$element_id}.record_id AND et_{$element_id}.record_type = 'Item' AND et_{$element_id}.element_id = {$element_id}"
+                    );
+                    $joins_added[$element_id] = true;
+                }
+
+                $select->where("et_{$element_id}.text = ?", $text);
+            }
+        }
+
+        if (isset($item->id)) {
+            $select->where("i.id != ?", $item->id);
+        }
+        $item_ids = $db->fetchCol($select);
+        foreach ($item_ids as $item_id) {
+            $duplicates[] = array(
+                'item' => $db->getTable('Item')->find($item_id),
+                'rule' => $rule,
+            );
+        }
+    }
+
+    return $duplicates;
 }

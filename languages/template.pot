@@ -17,20 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ItemDuplicateCheckPlugin.php:75
+#: ItemDuplicateCheckPlugin.php:52
 msgid "Item Duplicate Check"
 msgstr ""
 
-#: views/admin/items/form.php:51
+#: views/admin/check/check.php:5
 msgid "Duplicate found"
 msgstr ""
 
-#: views/admin/items/form.php:53
+#: views/admin/check/check.php:7
 msgid "Duplicates found"
 msgstr ""
 
-#: views/admin/items/form.php:79
-msgid "Force saving"
+#: views/admin/check/check.php:33
+msgid "Ignore duplicates"
 msgstr ""
 
 #: views/admin/rules/add.php:1 views/admin/rules/list.php:4

@@ -17,21 +17,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ItemDuplicateCheckPlugin.php:75
+#: ItemDuplicateCheckPlugin.php:52
 msgid "Item Duplicate Check"
 msgstr "Contrôle de contenu doublon"
 
-#: views/admin/items/form.php:51
+#: views/admin/check/check.php:5
 msgid "Duplicate found"
 msgstr "Doublon trouvé"
 
-#: views/admin/items/form.php:53
+#: views/admin/check/check.php:7
 msgid "Duplicates found"
 msgstr "Doublons trouvés"
 
-#: views/admin/items/form.php:79
-msgid "Force saving"
-msgstr "Forcer l'enregistrement"
+#: views/admin/check/check.php:33
+msgid "Ignore duplicates"
+msgstr "Ignorer les doublons"
 
 #: views/admin/rules/add.php:1 views/admin/rules/list.php:4
 msgid "Add a new rule"
