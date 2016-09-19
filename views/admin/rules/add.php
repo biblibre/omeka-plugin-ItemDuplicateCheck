@@ -26,13 +26,18 @@
             </div>
             <div class="five columns omega">
                 <div class="inputs">
-                    <select id="element_ids" name="element_ids[]" multiple="multiple" size="10">
-                        <?php foreach ($elements as $element): ?>
-                            <option value="<?php echo $element->id; ?>">
-                                <?php echo $element->getElementSet()->name . ' : ' . $element->name; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
+                <?php
+                    echo $this->formSelect(
+                        "element_ids[]",
+                        @$_POST['element_ids'],
+                        array(
+                            'id' => 'element_ids',
+                            'multiple' => true,
+                            'size' => 10,
+                        ), 
+                        $elements
+                    );
+                ?>
                 </div>
             </div>
         </div>

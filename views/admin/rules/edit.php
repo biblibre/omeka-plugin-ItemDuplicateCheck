@@ -27,15 +27,19 @@
             </div>
             <div class="five columns omega">
                 <div class="inputs">
-                    <select id="element_ids" name="element_ids[]" multiple="multiple" size="10">
-                        <?php $rule_element_ids = unserialize($rule->element_ids); ?>
-                        <?php foreach ($elements as $element): ?>
-                            <?php $selected = in_array($element->id, $rule_element_ids); ?>
-                            <option value="<?php echo $element->id; ?>" <?php if ($selected) { echo 'selected="selected"'; } ?>>
-                                <?php echo $element->getElementSet()->name . ' : ' . $element->name; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
+                <?php $rule_element_ids = unserialize($rule->element_ids); ?>
+                <?php
+                    echo $this->formSelect(
+                        "element_ids[]",
+                        $rule_element_ids,
+                        array(
+                            'id' => 'element_ids',
+                            'multiple' => true,
+                            'size' => 10,
+                        ), 
+                        $elements
+                    );
+                ?>
                 </div>
             </div>
         </div>

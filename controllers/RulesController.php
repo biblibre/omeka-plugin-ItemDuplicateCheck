@@ -79,9 +79,23 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
     {
         $db = get_db();
         $table = $db->getTable('Element');
-        $select = $table->getSelect();
-        $select->order('elements.element_set_id ASC');
-        $select->order('elements.name ASC');
-        return $table->fetchObjects($select);
+        $options = $table->findPairsForSelectForm(array(
+            'record_types' => array('Item', 'All'),
+            'sort' => 'orderBySet'
+        ));
+        $options = apply_filters('elements_select_options', $options);
+        // now format it like the original = set_name : element_name
+        $elements = array();
+        $optgroups = get_option('show_element_set_headings');
+        if ($optgroups) {
+            foreach ($options as $setName => $elems) {
+                foreach ($elems as $elemId => $elemName) {
+                    $elements[$elemId] = "$setName : $elemName";
+                }
+            }
+        } else {
+            $elements = $options;
+        }
+        return $elements;
     }
 }
