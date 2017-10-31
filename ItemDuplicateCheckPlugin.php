@@ -101,6 +101,12 @@ function item_duplicate_check_get_duplicates($item)
             }
         }
 
+        $where = $select->getPart(Zend_Db_Select::WHERE);
+        if (empty($where)) {
+            # This will just return the whole items table, abort
+            continue;
+        }
+
         if (isset($item->id)) {
             $select->where("i.id != ?", $item->id);
         }
