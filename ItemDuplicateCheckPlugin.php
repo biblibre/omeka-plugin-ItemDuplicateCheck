@@ -104,6 +104,7 @@ function item_duplicate_check_get_duplicates($item)
         if (isset($item->id)) {
             $select->where("i.id != ?", $item->id);
         }
+        $select->limit(10);
         $item_ids = $db->fetchCol($select);
         foreach ($item_ids as $item_id) {
             $duplicates[] = array(
