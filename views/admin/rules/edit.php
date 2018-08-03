@@ -10,6 +10,7 @@
             <div class="five columns omega">
                 <div class="inputs">
                     <select id="item_type_id" name="item_type_id">
+                        <option value=""></option>
                         <?php foreach ($itemTypes as $itemType): ?>
                             <?php $selected = ($itemType->id == $rule->item_type_id); ?>
                             <option value="<?php echo $itemType->id; ?>" <?php if ($selected):?>selected="selected"<?php endif; ?>>
