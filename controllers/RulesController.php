@@ -47,7 +47,7 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
         if (!isset($rule)) {
             $rule = new ItemDuplicateCheckRule;
         }
-        $rule->item_type_id = $item_type_id;
+        $rule->item_type_id = $item_type_id ? $item_type_id : null;
         $rule->element_ids = serialize($element_ids);
         $rule->save();
 

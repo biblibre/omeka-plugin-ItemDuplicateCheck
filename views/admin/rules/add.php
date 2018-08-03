@@ -10,6 +10,7 @@
             <div class="five columns omega">
                 <div class="inputs">
                     <select id="item_type_id" name="item_type_id">
+                        <option value=""></option>
                         <?php foreach ($itemTypes as $itemType): ?>
                             <option value="<?php echo $itemType->id; ?>">
                                 <?php echo $itemType->name; ?>
