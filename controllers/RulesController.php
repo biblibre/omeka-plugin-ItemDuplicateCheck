@@ -40,7 +40,7 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
     public function saveAction()
     {
         $rule_id = $this->_getParam('rule_id');
-        $item_type_id = $this->_getParam('item_type_id');
+        $rule->item_type_id = $item_type_id ? $item_type_id : null;
         $element_ids = $this->_getParam('element_ids', array());
 
         $rule = $this->_getRule($rule_id);
