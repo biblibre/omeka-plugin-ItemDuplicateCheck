@@ -9,6 +9,7 @@ msgstr ""
 "Project-Id-Version: Item Duplicate Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-20 11:54+0200\n"
+"PO-Revision-Date: 2021-10-12 23:24-0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,11 +34,35 @@ msgstr ""
 msgid "Ignore duplicates"
 msgstr ""
 
-#: views/admin/rules/add.php:1 views/admin/rules/list.php:4
+#: views/admin/rules/add.php:1 
+#: views/admin/rules/list.php:4
 msgid "Add a new rule"
 msgstr ""
 
-#: views/admin/rules/add.php:43 views/admin/rules/edit.php:47
+#: views/admin/rules/add.php:8
+#: views/admin/rules/edit.php:8
+msgid ""
+"Choose an <strong>Item Type</strong> (or none) to which apply the rule, then the <strong>Element</strong> "
+"(or combination of <strong>Elements</strong>) that make part of the rule and cannot be duplicated."
+msgstr ""
+
+#: views/admin/rules/add.php:43 
+#: views/admin/rules/list.php:13
+msgid "Item Type"
+msgstr ""
+
+#: views/admin/rules/add.php:43
+#: views/admin/rules/list.php:18
+msgid "All"
+msgstr ""
+
+#: views/admin/rules/add.php:43
+#: views/admin/rules/list.php:32
+msgid "Elements"
+msgstr ""
+
+#: views/admin/rules/add.php:54 
+#: views/admin/rules/edit.php:57
 msgid "Save"
 msgstr ""
 
@@ -49,15 +74,51 @@ msgstr ""
 msgid "Delete rule"
 msgstr ""
 
-#: views/admin/rules/delete.php:10
-#, php-format
-msgid "Are you sure you want to delete rule %1$s (%2$s) ?"
+#: views/admin/rules/delete.php:14
+msgid "Are you sure you want to delete the rule applied to all Items %1$s and checking for duplicates with %2$s as parameters?"
+msgstr ""
+
+#: views/admin/rules/delete.php:15
+msgid "whose type is"
+msgstr ""
+
+#: views/admin/rules/delete.php:23
+#: views/admin/rules/list.php:36
+msgid "Delete"
+msgstr ""
+
+#: views/admin/rules/delete.php:24
+msgid "Cancel"
 msgstr ""
 
 #: views/admin/rules/list.php:1
 msgid "Rules"
 msgstr ""
 
-#: views/admin/rules/list.php:12
+#: views/admin/rules/list.php:13
 msgid "Actions"
+msgstr ""
+
+#: views/admin/rules/list.php:35
+msgid "Edit"
+msgstr ""
+
+#: controllers/RulesController.php:31
+msgid "The rule was successfully deleted."
+msgstr ""
+
+#: controllers/RulesController.php:44
+msgid "No element was chosen. Please try again, choosing at least one element."
+msgstr ""
+
+#: controllers/RulesController.php:53
+msgid "edited"
+msgstr ""
+
+#: controllers/RulesController.php:53
+msgid "added"
+msgstr ""
+
+#: controllers/RulesController.php:54
+msgid "The rule was successfully %s."
 msgstr ""
