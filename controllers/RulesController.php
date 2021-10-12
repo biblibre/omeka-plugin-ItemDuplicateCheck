@@ -6,76 +6,77 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
     {
         $this->view->rules = $this->_getRules();
     }
-
+	
     public function addAction()
     {
         $this->view->itemTypes = $this->_getItemTypes();
         $this->view->elements = $this->_getElements();
     }
-
-    public function editAction()
+    
+	public function editAction()
     {
         $rule_id = $this->_getParam('rule_id');
-
         $this->view->rule = $this->_getRule($rule_id);
         $this->view->itemTypes = $this->_getItemTypes();
         $this->view->elements = $this->_getElements();
     }
-
-    public function deleteAction()
+    
+	public function deleteAction()
     {
         $rule_id = $this->_getParam('rule_id');
         $rule = $this->_getRule($rule_id);
-
         $confirm = $this->_getParam('confirm');
         if ($confirm) {
             $rule->delete();
+			$this->_helper->flashMessenger(__('The rule was successfully deleted.'), 'success');
             $this->_helper->redirector('list');
             return;
         }
-
         $this->view->rule = $rule;
     }
-
-    public function saveAction()
+    
+	public function saveAction()
     {
         $rule_id = $this->_getParam('rule_id');
-        $rule->item_type_id = $item_type_id ? $item_type_id : null;
+        $item_type_id = $this->_getParam('item_type_id');
         $element_ids = $this->_getParam('element_ids', array());
-
+		if (empty($element_ids)) {
+			$this->_helper->flashMessenger(__('No element was chosen. Please try again, choosing at least one element.', $action), 'error');
+			$this->_helper->redirector('list');
+			return;
+		}
         $rule = $this->_getRule($rule_id);
-        if (!isset($rule)) {
-            $rule = new ItemDuplicateCheckRule;
-        }
-        $rule->item_type_id = $item_type_id;
+        if (!isset($rule)) $rule = new ItemDuplicateCheckRule;
+        $rule->item_type_id = $item_type_id ? $item_type_id : null;
         $rule->element_ids = serialize($element_ids);
         $rule->save();
-
+		$action = (isset($rule_id) ? __('edited') : __('added'));
+		$this->_helper->flashMessenger(__('The rule was successfully %s.', $action), 'success');
         $this->_helper->redirector('list');
     }
-
-    protected function _getRules()
+    
+	protected function _getRules()
     {
         return get_db()
             ->getTable('ItemDuplicateCheckRule')
             ->findAll();
     }
-
-    protected function _getRule($rule_id)
+    
+	protected function _getRule($rule_id)
     {
         return get_db()
             ->getTable('ItemDuplicateCheckRule')
             ->find($rule_id);
     }
-
-    protected function _getItemTypes()
+    
+	protected function _getItemTypes()
     {
         return get_db()
             ->getTable('ItemType')
             ->findAll();
     }
-
-    protected function _getElements()
+    
+	protected function _getElements()
     {
         $db = get_db();
         $table = $db->getTable('Element');
