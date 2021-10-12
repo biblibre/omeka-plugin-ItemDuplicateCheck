@@ -1,7 +1,8 @@
 <?php echo head(array('title' => __('Rules'))); ?>
+
 <?php echo flash(); ?>
 
-<a href="<?php echo url('item-duplicate-check'); ?>/rules/add"><?php echo __('Add a new rule'); ?></a>
+<a href="<?php echo html_escape(url('item-duplicate-check/rules/add')); ?>" class="add full-width-mobile button green"><?php echo __('Add a new rule'); ?></a>
 
 <?php if (count($rules)): ?>
   <table>
