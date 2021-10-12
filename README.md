@@ -16,4 +16,4 @@ It's always recommended to backup your files and your databases and to check you
 This plugin is published under the GNU General Public License v3.0
 
 ## Copyright
-Copyright Julian Maurice (https://github.com/jajm), 2017
+Copyright Julian Maurice (https://github.com/jajm), BibLibre, 2015
