@@ -16,7 +16,12 @@
     <tbody>
       <?php foreach ($rules as $rule): ?>
         <tr>
-          <td><?php echo $rule->getItemType()->name; ?></td>
+          <td>
+            <?php
+              $itemType = $rule->getItemType();
+              echo $itemType ? $itemType->name : '<em>' . __('All') . '</em>';
+            ?>
+          </td>
           <td>
             <?php
               $element_names = array();
