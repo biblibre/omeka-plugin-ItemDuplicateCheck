@@ -33,11 +33,35 @@ msgstr "Doublons trouvés"
 msgid "Ignore duplicates"
 msgstr "Ignorer les doublons"
 
-#: views/admin/rules/add.php:1 views/admin/rules/list.php:4
+#: views/admin/rules/add.php:1 
+#: views/admin/rules/list.php:4
 msgid "Add a new rule"
 msgstr "Ajouter une règle"
 
-#: views/admin/rules/add.php:43 views/admin/rules/edit.php:47
+#: views/admin/rules/add.php:8
+#: views/admin/rules/edit.php:8
+msgid ""
+"Choose an <strong>Item Type</strong> (or none) to which apply the rule, then the <strong>Element</strong> "
+"(or combination of <strong>Elements</strong>) that make part of the rule and cannot be duplicated."
+msgstr ""
+
+#: views/admin/rules/add.php:43 
+#: views/admin/rules/list.php:13
+msgid "Item Type"
+msgstr ""
+
+#: views/admin/rules/add.php:43
+#: views/admin/rules/list.php:18
+msgid "All"
+msgstr ""
+
+#: views/admin/rules/add.php:43
+#: views/admin/rules/list.php:32
+msgid "Elements"
+msgstr ""
+
+#: views/admin/rules/add.php:54 
+#: views/admin/rules/edit.php:57
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -49,15 +73,51 @@ msgstr "Modifier la règle"
 msgid "Delete rule"
 msgstr "Supprimer la règle"
 
-#: views/admin/rules/delete.php:10
-#, php-format
-msgid "Are you sure you want to delete rule %1$s (%2$s) ?"
-msgstr "Êtes-vous sûr de vouloir supprimer la règle %1$s (%2$s) ?"
+#: views/admin/rules/delete.php:14
+msgid "Are you sure you want to delete the rule applied to all Items %1$s and checking for duplicates with %2$s as parameters?"
+msgstr "Êtes-vous sûr de vouloir supprimer la règle appliquée à tous les éléments %1$s et recherche les doublons avec %2$s comme paramètres ?"
+
+#: views/admin/rules/delete.php:15
+msgid "whose type is"
+msgstr "dont le type est"
+
+#: views/admin/rules/delete.php:23
+#: views/admin/rules/list.php:36
+msgid "Delete"
+msgstr "Supprimer"
+
+#: views/admin/rules/delete.php:24
+msgid "Cancel"
+msgstr "Annuler"
 
 #: views/admin/rules/list.php:1
 msgid "Rules"
 msgstr "Règles"
 
-#: views/admin/rules/list.php:12
+#: views/admin/rules/list.php:13
 msgid "Actions"
 msgstr "Actions"
+
+#: views/admin/rules/list.php:35
+msgid "Edit"
+msgstr "Modifier"
+
+#: controllers/RulesController.php:31
+msgid "The rule was successfully deleted."
+msgstr "La règle a été supprimée avec succès."
+
+#: controllers/RulesController.php:44
+msgid "No element was chosen. Please try again, choosing at least one element."
+msgstr "Aucun élément n'a été choisi. Veuillez réessayer en choisissant au moins un élément."
+
+#: controllers/RulesController.php:53
+msgid "edited"
+msgstr "modifiée"
+
+#: controllers/RulesController.php:53
+msgid "added"
+msgstr "ajoutée "
+
+#: controllers/RulesController.php:54
+msgid "The rule was successfully %s."
+msgstr "La règle a été %s avec succès."
