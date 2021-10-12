@@ -26,7 +26,7 @@
             <?php
               $element_names = array();
               foreach ($rule->getElements() as $element) {
-                $element_names[] = $element->name;
+                $element_names[] = __($element->name);
               }
               echo implode(', ', $element_names);
             ?>
