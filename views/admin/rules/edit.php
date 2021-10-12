@@ -1,8 +1,13 @@
 <?php echo head(array('title' => __('Edit rule'))); ?>
+
 <?php echo flash(); ?>
 
 <form action="<?php echo url('item-duplicate-check'); ?>/rules/save" method="post">
     <section class="seven columns alpha">
+		<p>
+			<?php echo __('Choose an <strong>Item Type</strong> (or none) to which apply the rule, then the <strong>Element</strong> (or combination of <strong>Elements</strong>) that make part of the rule and cannot be duplicated.'); ?>
+		</p>
+
         <div class="field">
             <div class="two columns alpha">
                 <label for="item_type_id"><?php echo __('Item Type'); ?></label>
