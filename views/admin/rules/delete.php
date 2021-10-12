@@ -1,4 +1,5 @@
 <?php echo head(array('title' => __('Delete rule'))); ?>
+
 <?php echo flash(); ?>
 
 <?php
@@ -7,7 +8,13 @@
         $element_names[] = $element->name;
     }
 ?>
-<h2><?php echo __('Are you sure you want to delete rule %1$s (%2$s) ?', $rule->getItemType()->name, implode(', ', $element_names)); ?></h2>
+
+<p>
+    <?php echo __('Are you sure you want to delete the rule applied to all Items %1$s and checking for duplicates with %2$s as parameters?', 
+                  ($rule->getItemType()->name != '' ? __('identified by the Item Type') . ' <b>' . $rule->getItemType()->name .'</b>' : ''), 
+                  implode(' and ', array_map(function($val) { return '<b>' . $val . '</b>'; }, $element_names))); 
+    ?>
+</p>
 
 <form action="<?php echo url('item-duplicate-check'); ?>/rules/delete" method="post">
     <input type="hidden" name="rule_id" value="<?php echo $rule->id; ?>">
