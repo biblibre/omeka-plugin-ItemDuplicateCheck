@@ -1,4 +1,4 @@
-<?php echo head(array('title' => __('Rules'))); ?>
+<?php echo head(array('title' => __('Rules') . (count($rules) > 0 ? ' ' . __('(%s total)', count($rules)) : ''))); ?>
 
 <?php echo flash(); ?>
 
