@@ -19,7 +19,7 @@
           <td>
             <?php
               $itemType = $rule->getItemType();
-              echo $itemType ? $itemType->name : '<em>' . __('All') . '</em>';
+              echo $itemType ? $itemType->name : '** ' . __('All types') . ' **';
             ?>
           </td>
           <td>
@@ -28,7 +28,7 @@
               foreach ($rule->getElements() as $element) {
                 $element_names[] = __($element->name);
               }
-              echo implode(', ', $element_names);
+              echo implode(' + ', $element_names);
             ?>
           </td>
           <td>
