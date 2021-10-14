@@ -56,7 +56,7 @@ msgstr "Tipologia documento"
 #: views/admin/rules/add.php:43
 #: views/admin/rules/list.php:18
 msgid "All types"
-msgstr "Tutti le tipologie"
+msgstr "Tutte le tipologie"
 
 #: views/admin/rules/add.php:43
 #: views/admin/rules/list.php:32
