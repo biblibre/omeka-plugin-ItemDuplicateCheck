@@ -41,24 +41,26 @@ msgstr "Ajouter une règle"
 #: views/admin/rules/add.php:8
 #: views/admin/rules/edit.php:8
 msgid ""
-"Choose an <strong>Item Type</strong> (or none) to which apply the rule, then the <strong>Element</strong> "
-"(or combination of <strong>Elements</strong>) that make part of the rule and cannot be duplicated."
+"Choose an <strong>Item Type</strong> to which to apply the rule, then the <strong>Element</strong> "
+"(or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated."
 msgstr ""
+"Choisissez un <strong>Type de contenu</strong> auquel appliquer la règle, puis l'<strong>Élément</strong> "
+"(ou une combinaison d'<strong>Éléments</strong>) qui constituent la règle et ne peuvent pas être dupliqués."
 
 #: views/admin/rules/add.php:43 
 #: views/admin/rules/list.php:13
 msgid "Item Type"
-msgstr ""
+msgstr "Type de contenu"
 
 #: views/admin/rules/add.php:43
 #: views/admin/rules/list.php:18
-msgid "All"
-msgstr ""
+msgid "All types"
+msgstr "Tous les types"
 
 #: views/admin/rules/add.php:43
 #: views/admin/rules/list.php:32
 msgid "Elements"
-msgstr ""
+msgstr "Éléments"
 
 #: views/admin/rules/add.php:54 
 #: views/admin/rules/edit.php:57
@@ -75,7 +77,7 @@ msgstr "Supprimer la règle"
 
 #: views/admin/rules/delete.php:14
 msgid "Are you sure you want to delete the rule applied to all Items %1$s and checking for duplicates with %2$s as parameters?"
-msgstr "Êtes-vous sûr de vouloir supprimer la règle appliquée à tous les éléments %1$s et recherche les doublons avec %2$s comme paramètres ?"
+msgstr "Êtes-vous sûr de vouloir supprimer la règle appliquée à tous les éléments %1$s et recherche les doublons avec %2$s comme paramètres?"
 
 #: views/admin/rules/delete.php:15
 msgid "whose type is"

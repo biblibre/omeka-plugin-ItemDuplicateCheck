@@ -42,10 +42,10 @@ msgstr "Aggiungi una nuova regola"
 #: views/admin/rules/add.php:8
 #: views/admin/rules/edit.php:8
 msgid ""
-"Choose an <strong>Item Type</strong> (or none) to which apply the rule, then the <strong>Element</strong> "
-"(or combination of <strong>Elements</strong>) that make part of the rule and cannot be duplicated."
+"Choose an <strong>Item Type</strong> to which to apply the rule, then the <strong>Element</strong> "
+"(or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated."
 msgstr ""
-"Scegli una <strong>Tipologia documento</strong> (o nessuna) alla quale applicare la regola, poi l'<strong>elemento</strong> "
+"Scegli una <strong>tipologia documento</strong> alla quale applicare la regola, poi l'<strong>elemento</strong> "
 "(o combinazione di <strong>elementi</strong>) che fa parte della regola e non può essere duplicato."
 
 #: views/admin/rules/add.php:43 
@@ -55,8 +55,8 @@ msgstr "Tipologia documento"
 
 #: views/admin/rules/add.php:43
 #: views/admin/rules/list.php:18
-msgid "All"
-msgstr "Tutti"
+msgid "All types"
+msgstr "Tutti le tipologie"
 
 #: views/admin/rules/add.php:43
 #: views/admin/rules/list.php:32

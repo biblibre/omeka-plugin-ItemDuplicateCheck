@@ -42,8 +42,8 @@ msgstr ""
 #: views/admin/rules/add.php:8
 #: views/admin/rules/edit.php:8
 msgid ""
-"Choose an <strong>Item Type</strong> (or none) to which apply the rule, then the <strong>Element</strong> "
-"(or combination of <strong>Elements</strong>) that make part of the rule and cannot be duplicated."
+"Choose an <strong>Item Type</strong> to which to apply the rule, then the <strong>Element</strong> "
+"(or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated."
 msgstr ""
 
 #: views/admin/rules/add.php:43 
@@ -53,7 +53,7 @@ msgstr ""
 
 #: views/admin/rules/add.php:43
 #: views/admin/rules/list.php:18
-msgid "All"
+msgid "All types"
 msgstr ""
 
 #: views/admin/rules/add.php:43
