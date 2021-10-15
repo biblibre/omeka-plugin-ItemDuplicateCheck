@@ -100,7 +100,7 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
                 asort($option);
             }
         } else {
-			// sort alphabetically all element names
+            // sort alphabetically all element names
             asort($options);
         }
 
