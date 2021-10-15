@@ -22,16 +22,16 @@ msgid "Item Duplicate Check"
 msgstr "Contrôle de contenu doublon"
 
 #: views/admin/check/check.php:5
-msgid "Duplicate found"
-msgstr "Doublon trouvé"
+msgid "Warning: a duplicate of this Item has been found!"
+msgstr "Attention: un doublon de cet contenu a été trouvé!"
 
 #: views/admin/check/check.php:7
-msgid "Duplicates found"
-msgstr "Doublons trouvés"
+msgid "Warning: %s duplicates of this Item have been found!"
+msgstr "Attention : %s doublons de cet contenu ont été trouvés!"
 
 #: views/admin/check/check.php:33
-msgid "Ignore duplicates"
-msgstr "Ignorer les doublons"
+msgid "Ignore duplicates when saving"
+msgstr "Ignorer les doublons lors de l'enregistrement"
 
 #: views/admin/rules/add.php:1 
 #: views/admin/rules/list.php:4

@@ -23,15 +23,15 @@ msgid "Item Duplicate Check"
 msgstr ""
 
 #: views/admin/check/check.php:5
-msgid "Duplicate found"
+msgid "Warning: a duplicate of this Item has been found!"
 msgstr ""
 
 #: views/admin/check/check.php:7
-msgid "Duplicates found"
+msgid "Warning: %s duplicates of this Item have been found!"
 msgstr ""
 
 #: views/admin/check/check.php:33
-msgid "Ignore duplicates"
+msgid "Ignore duplicates when saving"
 msgstr ""
 
 #: views/admin/rules/add.php:1 
