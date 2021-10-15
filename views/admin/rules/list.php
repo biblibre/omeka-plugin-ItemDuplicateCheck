@@ -2,7 +2,7 @@
 
 <?php echo flash(); ?>
 
-<a href="<?php echo html_escape(url('item-duplicate-check/rules/add')); ?>" class="add full-width-mobile button green"><?php echo __('Add a new rule'); ?></a>
+<a href="<?php echo html_escape(url('item-duplicate-check/rules/add')); ?>" class="add full-width-mobile button green"><?php echo __('Add a rule'); ?></a>
 
 <?php if (count($rules)): ?>
   <table>
