@@ -9,7 +9,7 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
 	
     public function addAction()
     {
-        $this->view->itemTypes = $this->_getItemTypes();
+        $this->view->itemTypesForSelect = $this->_getItemTypesForSelect();
         $this->view->elements = $this->_getElements();
     }
     
@@ -17,7 +17,7 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
     {
         $rule_id = $this->_getParam('rule_id');
         $this->view->rule = $this->_getRule($rule_id);
-        $this->view->itemTypes = $this->_getItemTypes();
+        $this->view->itemTypesForSelect = $this->_getItemTypesForSelect();
         $this->view->elements = $this->_getElements();
     }
     
@@ -69,11 +69,11 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
             ->find($rule_id);
     }
     
-	protected function _getItemTypes()
+	protected function _getItemTypesForSelect()
     {
         return get_db()
             ->getTable('ItemType')
-            ->findAll();
+            ->findPairsForSelectForm();
     }
     
 	protected function _getElements()
