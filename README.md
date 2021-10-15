@@ -18,4 +18,4 @@ This plugin is published under the GNU General Public License v3.0
 ## Copyright
 Copyright Julian Maurice (https://github.com/jajm), BibLibre, 2015-2021
 
-Copyright Daniele Binaghi ((https://github.com/dbinaghi), 2021
+Copyright Daniele Binaghi (https://github.com/dbinaghi), 2021
