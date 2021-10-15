@@ -90,10 +90,7 @@ function item_duplicate_check_get_duplicates($item)
 
             foreach ($item['Elements'][$element_id] as $value) {
                 $text = $value['text'];
-                if (0 == strlen(trim($text))) {
-                    continue;
-                }
-                if (function_exists('element_types_format')) {
+                if (0 != strlen(trim($text)) && function_exists('element_types_format')) {
                     $text = element_types_format($element_id, $text);
                 }
 
