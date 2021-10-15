@@ -117,7 +117,7 @@ msgstr "modificata"
 
 #: controllers/RulesController.php:53
 msgid "added"
-msgstr "aggiunto"
+msgstr "aggiunta"
 
 #: controllers/RulesController.php:54
 msgid "The rule was successfully %s."
