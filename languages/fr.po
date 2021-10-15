@@ -81,6 +81,10 @@ msgstr "Êtes-vous sûr de vouloir supprimer la règle appliquée à tous les é
 msgid "whose type is"
 msgstr "dont le type est"
 
+#: views/admin/rules/delete.php:16
+msgid "and"
+msgstr "et"
+
 #: views/admin/rules/delete.php:23
 #: views/admin/rules/list.php:36
 msgid "Delete"

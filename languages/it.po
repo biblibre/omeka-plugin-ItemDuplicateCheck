@@ -82,6 +82,10 @@ msgstr "Sei sicuro di voler cancellare la regola applicata a tutti i documenti %
 msgid "whose type is"
 msgstr "il cui tipo è"
 
+#: views/admin/rules/delete.php:16
+msgid "and"
+msgstr "e"
+
 #: views/admin/rules/delete.php:23
 #: views/admin/rules/list.php:36
 msgid "Delete"
