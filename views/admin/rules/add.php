@@ -16,9 +16,9 @@
                 <div class="inputs">
                     <select id="item_type_id" name="item_type_id">
                         <option value="">** <?php echo __('All types'); ?> **</option>
-                        <?php foreach ($itemTypes as $itemType): ?>
-                            <option value="<?php echo $itemType->id; ?>">
-                                <?php echo $itemType->name; ?>
+                        <?php foreach ($itemTypesForSelect as $index => $value): ?>
+                            <option value="<?php echo $index; ?>">
+                                <?php echo $value; ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
