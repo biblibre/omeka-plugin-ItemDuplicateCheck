@@ -10,11 +10,11 @@
 ?>
 
 <p>
-	<?php 
-		echo __('Are you sure you want to delete the rule applied to all Items %1$s and checking for duplicates with %2$s as parameters?', 
-		($rule->getItemType()->name != '' ? __('whose type is') . ' <b>' . $rule->getItemType()->name .'</b>' : ''), 
-		implode(' ' . __('and') . ' ', array_map(function($val) { return '<b>' . __($val) . '</b>'; }, $element_names))); 
-	?>
+    <?php 
+        echo __('Are you sure you want to delete the rule applied to all Items %1$s and checking for duplicates with %2$s as parameters?', 
+        ($rule->getItemType()->name != '' ? __('whose type is') . ' <b>' . $rule->getItemType()->name .'</b>' : ''), 
+        implode(' ' . __('and') . ' ', array_map(function($val) { return '<b>' . __($val) . '</b>'; }, $element_names))); 
+    ?>
 </p>
 
 <form action="<?php echo url('item-duplicate-check'); ?>/rules/delete" method="post">
