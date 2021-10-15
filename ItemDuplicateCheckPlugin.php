@@ -6,6 +6,7 @@ class ItemDuplicateCheckPlugin extends Omeka_Plugin_AbstractPlugin
         'install',
         'uninstall',
         'initialize',
+        'define_acl',
         'admin_head',
     );
 
@@ -40,6 +41,12 @@ class ItemDuplicateCheckPlugin extends Omeka_Plugin_AbstractPlugin
         add_translation_source(dirname(__FILE__) . '/languages');
     }
 
+    public function hookDefineAcl($args)
+    {
+        // Restrict menu access to super and admin users
+        $args['acl']->addResource('ItemDuplicateCheck_Rules');
+    }
+    
     public function hookAdminHead()
     {
         queue_js_file('item_duplicate_check');
@@ -51,6 +58,7 @@ class ItemDuplicateCheckPlugin extends Omeka_Plugin_AbstractPlugin
         $nav[] = array(
             'label' => __('Item Duplicate Check'),
             'uri' => url('item-duplicate-check/rules/list'),
+            'resource' => 'ItemDuplicateCheck_Rules'
         );
         return $nav;
     }
