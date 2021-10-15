@@ -24,20 +24,18 @@ msgstr "Controllo elementi duplicati"
 
 #: views/admin/check/check.php:5
 msgid "Warning: a duplicate of this Item has been found!"
-msgstr "Attenzione: è stato trovato un duplicato di questo documento!"
+msgid_plural "Warning: %s duplicates of this Item have been found!"
+msgstr[0] "Attenzione: è stato trovato un duplicato di questo documento!"
+msgstr[1] "Attenzione: sono stati trovati %s duplicati di questo documento!"
 
-#: views/admin/check/check.php:7
-msgid "Warning: %s duplicates of this Item have been found!"
-msgstr "Attenzione: sono stati trovati %s duplicati di questo documento!"
-
-#: views/admin/check/check.php:33
-msgid "Ignore duplicates when saving"
-msgstr "Ignorare i duplicati durante il salvataggio"
+#: views/admin/check/check.php:30
+msgid "Ignore all duplicates when saving"
+msgstr "Ignorare tutti i duplicati durante il salvataggio"
 
 #: views/admin/rules/add.php:1
 #: views/admin/rules/list.php:4
-msgid "Add a new rule"
-msgstr "Aggiungi una nuova regola"
+msgid "Add a rule"
+msgstr "Aggiungi una regola"
 
 #: views/admin/rules/add.php:8
 #: views/admin/rules/edit.php:8
