@@ -16,10 +16,10 @@
                 <div class="inputs">
                     <select id="item_type_id" name="item_type_id">
                         <option value="">** <?php echo __('All types'); ?> **</option>
-                        <?php foreach ($itemTypes as $itemType): ?>
-                            <?php $selected = ($itemType->id == $rule->item_type_id); ?>
-                            <option value="<?php echo $itemType->id; ?>" <?php if ($selected):?>selected="selected"<?php endif; ?>>
-                                <?php echo $itemType->name; ?>
+                        <?php foreach ($itemTypesForSelect as $index => $value): ?>
+                            <?php $selected = ($index == $rule->item_type_id); ?>
+                            <option value="<?php echo $index; ?>" <?php if ($selected):?>selected="selected"<?php endif; ?>>
+                                <?php echo $value; ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
