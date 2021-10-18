@@ -1,8 +1,8 @@
 <?php if (!empty($duplicates)): ?>
     <div id="item_duplicate_check" class="flash alert">
         <?php
-            $countDuplicates = count($duplicates);
-            echo __(plural("Warning: a duplicate of this Item has been found!", "Warning: %s duplicates of this Item have been found!", $countDuplicates), $countDuplicates);
+            $duplicatesCount = count($duplicates);
+            echo __(plural("Warning: a duplicate of this Item has been found!", "Warning: %s duplicates of this Item have been found!", $duplicatesCount), ($duplicatesCount >= 10 ? __('at least') . ' ' . $duplicatesCount : $duplicatesCount));
         ?>
         <ul style="list-style-type: none; margin-left: 0; padding-left: 0">
             <?php foreach ($duplicates as $duplicate): ?>
