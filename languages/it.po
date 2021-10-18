@@ -10,6 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2015-07-20 11:54+0200\n"
 "PO-Revision-Date: 2015-07-20 12:06+0200\n"
 "PO-Revision-Date: 2021-10-12 23:24-0100\n"
+"PO-Revision-Date: 2021-10-18 18:10-0100\n"
 "Last-Translator: Daniele Binaghi <admin@bitoteko.it>\n"
 "Language-Team: Italian\n"
 "Language: fr\n"
@@ -27,6 +28,10 @@ msgid "Warning: a duplicate of this Item has been found!"
 msgid_plural "Warning: %s duplicates of this Item have been found!"
 msgstr[0] "Attenzione: è stato trovato un duplicato di questo documento!"
 msgstr[1] "Attenzione: sono stati trovati %s duplicati di questo documento!"
+
+#: views/admin/check/check.php:5
+msgid "at least"
+msgstr "almeno"
 
 #: views/admin/check/check.php:30
 msgid "Ignore all duplicates when saving"
@@ -126,3 +131,23 @@ msgstr "aggiunta"
 #: controllers/RulesController.php:54
 msgid "The rule was successfully %s."
 msgstr "La regola è stata correttamente %s."
+
+#: config_form.php:7
+msgid "Element List Layout"
+msgstr "Aspetto lista elementi"
+
+#: config_form.php:11
+msgid "How Elements are grouped and sorted in Element lists."
+msgstr "Il modo in cui gli elementi sono raggruppati e ordinati nelle liste di elementi."
+
+#: config_form.php:17
+msgid "Default order (as set in Admin / Settings)"
+msgstr "Ordine predefinito (così come indicato in Admin / Impostazioni)"
+
+#: config_form.php:18
+msgid "All Elements, alphabetical order"
+msgstr "Tutti gli elementi, ordine alfabetico"
+
+#: config_form.php:19
+msgid "Elements grouped by Element Set, alphabetical order"
+msgstr "Elementi raggruppati per insieme di elementi, ordine alfabetico"
