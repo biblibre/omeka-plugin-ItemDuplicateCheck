@@ -78,32 +78,25 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
     
     protected function _getElements()
     {
-        $show_element_set_headings = get_option('show_element_set_headings');
         $db = get_db();
         $table = $db->getTable('Element');
         $options = $table->findPairsForSelectForm(array(
             'record_types' => array('Item', 'All'),
-            'sort' => ($show_element_set_headings ? 'alphaBySet' : 'alpha')
+            'sort' => 'orderBySet'
         ));
         $options = apply_filters('elements_select_options', $options);
-
-        if ($show_element_set_headings) {
-            foreach ($options as $option) {
-                $optGroup = $option['item_type_name']
-                    ? __('Item Type') . ': ' . __($option['item_type_name'])
-                    : __($option['element_set_name']);
-                $value = __($option['element_name']);
-                if ($value != '') $options[$optGroup][$option['element_id']] = $value;
-            }
-            // sort alphabetically element names in each element set
-            foreach ($options as &$option) {
-                asort($option);
+        // now format it like the original = set_name : element_name
+        $elements = array();
+        $optgroups = get_option('show_element_set_headings');
+        if ($optgroups) {
+            foreach ($options as $setName => $elems) {
+                foreach ($elems as $elemId => $elemName) {
+                    $elements[$elemId] = "$setName : $elemName";
+                }
             }
         } else {
-            // sort alphabetically all element names
-            asort($options);
+            $elements = $options;
         }
-
-        return $options;
+        return $elements;
     }
 }
