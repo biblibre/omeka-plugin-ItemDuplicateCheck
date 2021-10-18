@@ -7,11 +7,11 @@ class ItemDuplicateCheckPlugin extends Omeka_Plugin_AbstractPlugin
         'uninstall',
         'initialize',
         'define_acl',
-        'admin_head'
+        'admin_head',
     );
 
     protected $_filters = array(
-        'admin_navigation_main'
+        'admin_navigation_main',
     );
 
     public function hookInstall()
