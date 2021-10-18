@@ -24,8 +24,8 @@ msgstr "Contrôle de contenu doublon"
 #: views/admin/check/check.php:5
 msgid "Warning: a duplicate of this Item has been found!"
 msgid_plural "Warning: %s duplicates of this Item have been found!"
-msgstr[0] "Attention : un doublon de cet contenu a été trouvé !"
-msgstr[1] "Attention : %s doublons de cet contenu ont été trouvés !"
+msgstr[0] "Attention : un doublon de ce contenu a été trouvé !"
+msgstr[1] "Attention : %s doublons de ce contenu ont été trouvés !"
 
 #: views/admin/check/check.php:30
 msgid "Ignore all duplicates when saving"
