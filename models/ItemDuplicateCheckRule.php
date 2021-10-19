@@ -5,6 +5,7 @@ class ItemDuplicateCheckRule extends Omeka_Record_AbstractRecord
     public $id;
     public $item_type_id;
     public $element_ids;
+    public $collection_id;
 
     public function getItemType() {
         return $this->_db->getTable('ItemType')->find($this->item_type_id);
@@ -17,5 +18,9 @@ class ItemDuplicateCheckRule extends Omeka_Record_AbstractRecord
             $elements[] = $table->find($element_id);
         }
         return $elements;
+    }
+
+    public function getCollection() {
+        return $this->_db->getTable('Collection')->find($this->collection_id);
     }
 }
