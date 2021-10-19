@@ -1,4 +1,4 @@
-<?php echo head(array('title' => __('Add a new rule'))); ?>
+<?php echo head(array('title' => __('Add a rule'))); ?>
 
 <?php echo flash(); ?>
 
@@ -15,7 +15,7 @@
             <div class="five columns omega">
                 <div class="inputs">
                     <select id="item_type_id" name="item_type_id">
-                        <option value="">** <?php echo __('All types'); ?> **</option>
+                        <option value="">** <?php echo __('Any type'); ?> **</option>
                         <?php foreach ($itemTypesForSelect as $index => $value): ?>
                             <option value="<?php echo $index; ?>">
                                 <?php echo $value; ?>
@@ -44,6 +44,24 @@
                         $elements
                     );
                 ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="two columns alpha">
+                <label for="collection_id"><?php echo __('Collection'); ?></label>
+            </div>
+            <div class="five columns omega">
+                <div class="inputs">
+                    <select id="collection_id" name="collection_id">
+                        <option value="">** <?php echo __('Any collection'); ?> **</option>
+                        <?php foreach ($collectionsForSelect as $index => $value): ?>
+                            <option value="<?php echo $index; ?>">
+                                <?php echo $value; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
             </div>
         </div>
