@@ -1,7 +1,7 @@
 # Translation for the Item Duplicate Check plugin for Omeka.
-# Copyright (C) 2015 BibLibre
+# Copyright (C) 2015-2021 BibLibre
 # This file is distributed under the same license as the Omeka package.
-# Julian Maurice <julian.maurice@biblibre.com>, 2015
+# Julian Maurice <julian.maurice@biblibre.com>, 2015-2021
 #
 #, fuzzy
 msgid ""
@@ -10,6 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-20 11:54+0200\n"
 "PO-Revision-Date: 2021-10-12 23:24-0100\n"
+"PO-Revision-Date: 2021-10-18 18:10-0100\n"
+"PO-Revision-Date: 2021-10-19 19:12-0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,6 +30,10 @@ msgid_plural "Warning: %s duplicates of this Item have been found!"
 msgstr[0] ""
 msgstr[1] ""
 
+#: views/admin/check/check.php:5
+msgid "at least"
+msgstr ""
+
 #: views/admin/check/check.php:30
 msgid "Ignore all duplicates when saving"
 msgstr ""
@@ -41,26 +47,42 @@ msgstr ""
 #: views/admin/rules/edit.php:8
 msgid ""
 "Choose an <strong>Item Type</strong> to which to apply the rule, then the <strong>Element</strong> "
-"(or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated."
+"(or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated; the rule "
+"can also be restricted to a specific <strong>Collection</strong>."
 msgstr ""
 
-#: views/admin/rules/add.php:43 
-#: views/admin/rules/list.php:13
+#: views/admin/rules/add.php:13 
+#: views/admin/rules/edit.php:13 
+#: views/admin/rules/list.php:11
 msgid "Item Type"
 msgstr ""
 
-#: views/admin/rules/add.php:43
-#: views/admin/rules/list.php:18
-msgid "All types"
+#: views/admin/rules/add.php:18
+#: views/admin/rules/edit.php:18
+#: views/admin/rules/list.php:23
+msgid "Any type"
 msgstr ""
 
-#: views/admin/rules/add.php:43
-#: views/admin/rules/list.php:32
+#: views/admin/rules/add.php:31
+#: views/admin/rules/edit.php:32
+#: views/admin/rules/list.php:12
 msgid "Elements"
 msgstr ""
 
-#: views/admin/rules/add.php:54 
-#: views/admin/rules/edit.php:57
+#: views/admin/rules/add.php:53
+#: views/admin/rules/edit.php:55
+#: views/admin/rules/list.php:13
+msgid "Collection"
+msgstr ""
+
+#: views/admin/rules/add.php:58
+#: views/admin/rules/edit.php:60
+#: views/admin/rules/list.php:38
+msgid "Any collection"
+msgstr ""
+
+#: views/admin/rules/add.php:72 
+#: views/admin/rules/edit.php:76
 msgid "Save"
 msgstr ""
 
@@ -85,7 +107,7 @@ msgid "and"
 msgstr ""
 
 #: views/admin/rules/delete.php:23
-#: views/admin/rules/list.php:36
+#: views/admin/rules/list.php:43
 msgid "Delete"
 msgstr ""
 
@@ -97,30 +119,54 @@ msgstr ""
 msgid "Rules"
 msgstr ""
 
-#: views/admin/rules/list.php:13
+#: views/admin/rules/list.php:1
+msgid "(%s total)"
+msgstr ""
+
+#: views/admin/rules/list.php:14
 msgid "Actions"
 msgstr ""
 
-#: views/admin/rules/list.php:35
+#: views/admin/rules/list.php:42
 msgid "Edit"
 msgstr ""
 
-#: controllers/RulesController.php:31
+#: controllers/RulesController.php:33
 msgid "The rule was successfully deleted."
 msgstr ""
 
-#: controllers/RulesController.php:44
+#: controllers/RulesController.php:46
 msgid "No element was chosen. Please try again, choosing at least one element."
 msgstr ""
 
-#: controllers/RulesController.php:53
+#: controllers/RulesController.php:57
 msgid "edited"
 msgstr ""
 
-#: controllers/RulesController.php:53
+#: controllers/RulesController.php:57
 msgid "added"
 msgstr ""
 
-#: controllers/RulesController.php:54
+#: controllers/RulesController.php:58
 msgid "The rule was successfully %s."
+msgstr ""
+
+#: config_form.php:7
+msgid "Element List Layout"
+msgstr ""
+
+#: config_form.php:11
+msgid "How Elements are grouped and sorted in Element lists."
+msgstr ""
+
+#: config_form.php:17
+msgid "Default order (as set in Admin / Settings)"
+msgstr ""
+
+#: config_form.php:18
+msgid "All Elements, alphabetical order"
+msgstr ""
+
+#: config_form.php:19
+msgid "Elements grouped by Element Set, alphabetical order"
 msgstr ""

@@ -1,7 +1,7 @@
 # Translation for the Item Duplicate Check plugin for Omeka.
-# Copyright (C) 2015 BibLibre
+# Copyright (C) 2015-2021 BibLibre
 # This file is distributed under the same license as the Omeka package.
-# Julian Maurice <julian.maurice@biblibre.com>, 2015
+# Julian Maurice <julian.maurice@biblibre.com>, 2015-2021
 #
 msgid ""
 msgstr ""
@@ -9,6 +9,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-20 11:54+0200\n"
 "PO-Revision-Date: 2015-07-20 12:06+0200\n"
+"PO-Revision-Date: 2021-10-18 18:10-0100\n"
+"PO-Revision-Date: 2021-10-19 19:12-0100\n"
 "Last-Translator: Julian Maurice <julian.maurice@biblibre.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -27,6 +29,10 @@ msgid_plural "Warning: %s duplicates of this Item have been found!"
 msgstr[0] "Attention : un doublon de ce contenu a été trouvé !"
 msgstr[1] "Attention : %s doublons de ce contenu ont été trouvés !"
 
+#: views/admin/check/check.php:5
+msgid "at least"
+msgstr "au moins"
+
 #: views/admin/check/check.php:30
 msgid "Ignore all duplicates when saving"
 msgstr "Ignorer tous les doublons lors de l'enregistrement"
@@ -40,28 +46,45 @@ msgstr "Ajouter une règle"
 #: views/admin/rules/edit.php:8
 msgid ""
 "Choose an <strong>Item Type</strong> to which to apply the rule, then the <strong>Element</strong> "
-"(or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated."
+"(or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated; the rule "
+"can also be restricted to a specific <strong>Collection</strong>."
 msgstr ""
 "Choisissez un <strong>Type de contenu</strong> auquel appliquer la règle, puis l'<strong>Élément</strong> "
-"(ou une combinaison d'<strong>Éléments</strong>) qui constituent la règle et ne peuvent pas être dupliqués."
+"(ou une combinaison d'<strong>Éléments</strong>) qui constituent la règle et ne peuvent pas être dupliqués; "
+"la règle peut également être limité à une <strong>Collection</strong> spécifique."
 
-#: views/admin/rules/add.php:43 
-#: views/admin/rules/list.php:13
+#: views/admin/rules/add.php:13 
+#: views/admin/rules/edit.php:13 
+#: views/admin/rules/list.php:11
 msgid "Item Type"
 msgstr "Type de contenu"
 
-#: views/admin/rules/add.php:43
-#: views/admin/rules/list.php:18
-msgid "All types"
-msgstr "Tous les types"
+#: views/admin/rules/add.php:18
+#: views/admin/rules/edit.php:18
+#: views/admin/rules/list.php:23
+msgid "Any type"
+msgstr "Toute type"
 
-#: views/admin/rules/add.php:43
-#: views/admin/rules/list.php:32
+#: views/admin/rules/add.php:31
+#: views/admin/rules/edit.php:32
+#: views/admin/rules/list.php:12
 msgid "Elements"
 msgstr "Éléments"
 
-#: views/admin/rules/add.php:54 
-#: views/admin/rules/edit.php:57
+#: views/admin/rules/add.php:53
+#: views/admin/rules/edit.php:55
+#: views/admin/rules/list.php:13
+msgid "Collection"
+msgstr "Collection"
+
+#: views/admin/rules/add.php:58
+#: views/admin/rules/edit.php:60
+#: views/admin/rules/list.php:38
+msgid "Any collection"
+msgstr "Toute collection"
+
+#: views/admin/rules/add.php:72 
+#: views/admin/rules/edit.php:76
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -86,7 +109,7 @@ msgid "and"
 msgstr "et"
 
 #: views/admin/rules/delete.php:23
-#: views/admin/rules/list.php:36
+#: views/admin/rules/list.php:43
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -98,30 +121,54 @@ msgstr "Annuler"
 msgid "Rules"
 msgstr "Règles"
 
-#: views/admin/rules/list.php:13
+#: views/admin/rules/list.php:1
+msgid "(%s total)"
+msgstr "(%s total)"
+
+#: views/admin/rules/list.php:14
 msgid "Actions"
 msgstr "Actions"
 
-#: views/admin/rules/list.php:35
+#: views/admin/rules/list.php:42
 msgid "Edit"
 msgstr "Modifier"
 
-#: controllers/RulesController.php:31
+#: controllers/RulesController.php:33
 msgid "The rule was successfully deleted."
 msgstr "La règle a été supprimée avec succès."
 
-#: controllers/RulesController.php:44
+#: controllers/RulesController.php:46
 msgid "No element was chosen. Please try again, choosing at least one element."
 msgstr "Aucun élément n'a été choisi. Veuillez réessayer en choisissant au moins un élément."
 
-#: controllers/RulesController.php:53
+#: controllers/RulesController.php:57
 msgid "edited"
 msgstr "modifiée"
 
-#: controllers/RulesController.php:53
+#: controllers/RulesController.php:57
 msgid "added"
 msgstr "ajoutée "
 
-#: controllers/RulesController.php:54
+#: controllers/RulesController.php:58
 msgid "The rule was successfully %s."
 msgstr "La règle a été %s avec succès."
+
+#: config_form.php:7
+msgid "Element List Layout"
+msgstr "Disposition liste d'éléments"
+
+#: config_form.php:11
+msgid "How Elements are grouped and sorted in Element lists."
+msgstr "Comment les éléments sont regroupés et triés dans les listes d'éléments."
+
+#: config_form.php:17
+msgid "Default order (as set in Admin / Settings)"
+msgstr "Ordre par défaut (tel que défini dans Admin / Paramètres)"
+
+#: config_form.php:18
+msgid "All Elements, alphabetical order"
+msgstr "Tous les éléments, ordre alphabétique"
+
+#: config_form.php:19
+msgid "Elements grouped by Element Set, alphabetical order"
+msgstr "Éléments regroupés par jeu d'éléments, ordre alphabétique"
