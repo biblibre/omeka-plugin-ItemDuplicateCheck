@@ -5,7 +5,7 @@
 <form action="<?php echo url('item-duplicate-check'); ?>/rules/save" method="post">
     <section class="seven columns alpha">
         <p>
-            <?php echo __('Choose an <strong>Item Type</strong> to which to apply the rule, then the <strong>Element</strong> (or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated.'); ?>
+			<?php echo __('Choose an <strong>Item Type</strong> to which to apply the rule, then the <strong>Element</strong> (or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated; the rule can also be restricted to a specific <strong>Collection</strong>.'); ?>
         </p>
 
         <div class="field">
