@@ -49,8 +49,15 @@ class ItemDuplicateCheckPlugin extends Omeka_Plugin_AbstractPlugin
     
     public function hookAdminHead()
     {
-        queue_js_file('item_duplicate_check');
-        queue_js_string('Omeka.WEB_DIR = ' . js_escape(WEB_DIR) . ';');
+		$request = Zend_Controller_Front::getInstance()->getRequest();
+		$controller = $request->getControllerName();
+		$action = $request->getActionName();
+
+		if ($controller == 'items') {
+			queue_js_file('item_duplicate_check');
+			queue_js_string('Omeka.WEB_DIR = ' . js_escape(WEB_DIR) . ';');
+			queue_css_file('item_duplicate_check');
+		}
     }
 
     public function filterAdminNavigationMain($nav)
