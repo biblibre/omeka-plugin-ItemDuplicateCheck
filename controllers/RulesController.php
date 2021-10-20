@@ -79,24 +79,69 @@ class ItemDuplicateCheck_RulesController extends Omeka_Controller_AbstractAction
     protected function _getElements()
     {
         $db = get_db();
-        $table = $db->getTable('Element');
-        $options = $table->findPairsForSelectForm(array(
-            'record_types' => array('Item', 'All'),
-            'sort' => 'orderBySet'
-        ));
-        $options = apply_filters('elements_select_options', $options);
-        // now format it like the original = set_name : element_name
-        $elements = array();
-        $optgroups = get_option('show_element_set_headings');
-        if ($optgroups) {
-            foreach ($options as $setName => $elems) {
-                foreach ($elems as $elemId => $elemName) {
-                    $elements[$elemId] = "$setName : $elemName";
+        $sql = "
+            SELECT es.name AS element_set_name,
+                e.id AS element_id,
+                e.name AS element_name
+            FROM {$db->ElementSet} es
+            JOIN {$db->Element} e ON es.id = e.element_set_id
+            WHERE es.record_type IS NULL OR es.record_type = 'Item'
+            ORDER BY es.name, e.name
+        ";
+
+        $options = array();
+        switch (get_option('item_duplicate_check_list_layout')) {
+            case 'elset_alpha':
+                $elements = $db->fetchAll($sql);
+                
+                // create groups of elements by element set
+                foreach ($elements as $element) {
+                    $optGroup = __($element['element_set_name']);
+                    $value = __($element['element_name']);
+                    if ($value != '') $options[$optGroup][$element['element_id']] = $value;
                 }
-            }
-        } else {
-            $elements = $options;
+
+                // sort alphabetically element names in each element set
+                foreach ($options as &$option) {
+                    asort($option);
+                }
+
+                break;
+            case 'el_alpha':
+                // retrieve elements
+                $elements = $db->fetchAll($sql);
+                
+                // create group of elements
+                foreach ($elements as $element) {
+                    $value = __($element['element_name']);
+                    if ($value != '') $options[$element['element_id']] = $value;
+                }
+
+                // sort alphabetically element names
+                asort($options);
+
+                break;
+            default:
+                // retrieve elements
+                $table = $db->getTable('Element');
+                $options = $table->findPairsForSelectForm(array(
+                    'record_types' => array('Item', 'All'),
+                    'sort' => 'orderBySet'
+                ));
+                $options = apply_filters('elements_select_options', $options);
+
+                if (get_option('show_element_set_headings')) {
+                    // create groups of elements by element set
+                    foreach ($options as $option) {
+                        $optGroup = $option['item_type_name']
+                            ? __('Item Type') . ': ' . __($option['item_type_name'])
+                            : __($option['element_set_name']);
+                        $value = __($option['element_name']);
+                        if ($value != '') $options[$optGroup][$option['element_id']] = $value;
+                    }
+                }
         }
-        return $elements;
+        
+        return $options;
     }
 }

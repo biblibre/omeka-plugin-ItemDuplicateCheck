@@ -9,6 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-20 11:54+0200\n"
 "PO-Revision-Date: 2015-07-20 12:06+0200\n"
+"PO-Revision-Date: 2021-10-18 18:10-0100\n"
 "Last-Translator: Julian Maurice <julian.maurice@biblibre.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -26,6 +27,10 @@ msgid "Warning: a duplicate of this Item has been found!"
 msgid_plural "Warning: %s duplicates of this Item have been found!"
 msgstr[0] "Attention : un doublon de ce contenu a été trouvé !"
 msgstr[1] "Attention : %s doublons de ce contenu ont été trouvés !"
+
+#: views/admin/check/check.php:5
+msgid "at least"
+msgstr "au moins"
 
 #: views/admin/check/check.php:30
 msgid "Ignore all duplicates when saving"
@@ -125,3 +130,23 @@ msgstr "ajoutée "
 #: controllers/RulesController.php:54
 msgid "The rule was successfully %s."
 msgstr "La règle a été %s avec succès."
+
+#: config_form.php:7
+msgid "Element List Layout"
+msgstr "Disposition liste d'éléments"
+
+#: config_form.php:11
+msgid "How Elements are grouped and sorted in Element lists."
+msgstr "Comment les éléments sont regroupés et triés dans les listes d'éléments."
+
+#: config_form.php:17
+msgid "Default order (as set in Admin / Settings)"
+msgstr "Ordre par défaut (tel que défini dans Admin / Paramètres)"
+
+#: config_form.php:18
+msgid "All Elements, alphabetical order"
+msgstr "Tous les éléments, ordre alphabétique"
+
+#: config_form.php:19
+msgid "Elements grouped by Element Set, alphabetical order"
+msgstr "Éléments regroupés par jeu d'éléments, ordre alphabétique"
