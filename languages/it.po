@@ -35,7 +35,7 @@ msgstr "almeno"
 
 #: views/admin/check/check.php:30
 msgid "Ignore all duplicates when saving"
-msgstr "Ignorare tutti i duplicati durante il salvataggio"
+msgstr "Ignora tutti i duplicati durante il salvataggio"
 
 #: views/admin/rules/add.php:1
 #: views/admin/rules/list.php:4
