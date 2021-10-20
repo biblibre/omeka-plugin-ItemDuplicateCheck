@@ -1,7 +1,8 @@
-<?php echo head(array('title' => __('Rules'))); ?>
+<?php echo head(array('title' => __('Rules') . (count($rules) > 0 ? ' ' . __('(%s total)', count($rules)) : ''))); ?>
+
 <?php echo flash(); ?>
 
-<a href="<?php echo url('item-duplicate-check'); ?>/rules/add"><?php echo __('Add a new rule'); ?></a>
+<a href="<?php echo html_escape(url('item-duplicate-check/rules/add')); ?>" class="add full-width-mobile button green"><?php echo __('Add a rule'); ?></a>
 
 <?php if (count($rules)): ?>
   <table>
@@ -15,14 +16,19 @@
     <tbody>
       <?php foreach ($rules as $rule): ?>
         <tr>
-          <td><?php echo $rule->getItemType()->name; ?></td>
+          <td>
+            <?php
+              $itemType = $rule->getItemType();
+              echo $itemType ? $itemType->name : '** ' . __('All types') . ' **';
+            ?>
+          </td>
           <td>
             <?php
               $element_names = array();
               foreach ($rule->getElements() as $element) {
-                $element_names[] = $element->name;
+                $element_names[] = __($element->name);
               }
-              echo implode(', ', $element_names);
+              echo implode(' + ', $element_names);
             ?>
           </td>
           <td>

@@ -1,41 +1,41 @@
 # Translation for the Item Duplicate Check plugin for Omeka.
-# Copyright (C) 2015 BibLibre
+# Copyright (C) 2018 Bitoteko
 # This file is distributed under the same license as the Omeka package.
-# Julian Maurice <julian.maurice@biblibre.com>, 2015
+# Daniele Binaghi <admin@bitoteko.it>, 2018
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Item Duplicate Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-20 11:54+0200\n"
+"PO-Revision-Date: 2015-07-20 12:06+0200\n"
 "PO-Revision-Date: 2021-10-12 23:24-0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Last-Translator: Daniele Binaghi <admin@bitoteko.it>\n"
+"Language-Team: Italian\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ItemDuplicateCheckPlugin.php:52
 msgid "Item Duplicate Check"
-msgstr ""
+msgstr "Controllo elementi duplicati"
 
 #: views/admin/check/check.php:5
 msgid "Warning: a duplicate of this Item has been found!"
 msgid_plural "Warning: %s duplicates of this Item have been found!"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Attenzione: è stato trovato un duplicato di questo documento!"
+msgstr[1] "Attenzione: sono stati trovati %s duplicati di questo documento!"
 
 #: views/admin/check/check.php:30
 msgid "Ignore all duplicates when saving"
-msgstr ""
+msgstr "Ignora tutti i duplicati durante il salvataggio"
 
-#: views/admin/rules/add.php:1 
+#: views/admin/rules/add.php:1
 #: views/admin/rules/list.php:4
 msgid "Add a rule"
-msgstr ""
+msgstr "Aggiungi una regola"
 
 #: views/admin/rules/add.php:8
 #: views/admin/rules/edit.php:8
@@ -43,84 +43,86 @@ msgid ""
 "Choose an <strong>Item Type</strong> to which to apply the rule, then the <strong>Element</strong> "
 "(or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated."
 msgstr ""
+"Scegli una <strong>tipologia documento</strong> alla quale applicare la regola, poi l'<strong>elemento</strong> "
+"(o combinazione di <strong>elementi</strong>) che fa parte della regola e non può essere duplicato."
 
 #: views/admin/rules/add.php:43 
 #: views/admin/rules/list.php:13
 msgid "Item Type"
-msgstr ""
+msgstr "Tipologia documento"
 
 #: views/admin/rules/add.php:43
 #: views/admin/rules/list.php:18
 msgid "All types"
-msgstr ""
+msgstr "Tutte le tipologie"
 
 #: views/admin/rules/add.php:43
 #: views/admin/rules/list.php:32
 msgid "Elements"
-msgstr ""
+msgstr "Elemento"
 
 #: views/admin/rules/add.php:54 
 #: views/admin/rules/edit.php:57
 msgid "Save"
-msgstr ""
+msgstr "Salva"
 
 #: views/admin/rules/edit.php:1
 msgid "Edit rule"
-msgstr ""
+msgstr "Modifica regola"
 
 #: views/admin/rules/delete.php:1
 msgid "Delete rule"
-msgstr ""
+msgstr "Cancella regola"
 
 #: views/admin/rules/delete.php:14
 msgid "Are you sure you want to delete the rule applied to all Items %1$s and checking for duplicates with %2$s as parameters?"
-msgstr ""
+msgstr "Sei sicuro di voler cancellare la regola applicata a tutti i documenti %1$s e che cerca duplicati con %2$s come parametri?"
 
 #: views/admin/rules/delete.php:15
 msgid "whose type is"
-msgstr ""
+msgstr "il cui tipo è"
 
 #: views/admin/rules/delete.php:16
 msgid "and"
-msgstr ""
+msgstr "e"
 
 #: views/admin/rules/delete.php:23
 #: views/admin/rules/list.php:36
 msgid "Delete"
-msgstr ""
+msgstr "Cancella"
 
 #: views/admin/rules/delete.php:24
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #: views/admin/rules/list.php:1
 msgid "Rules"
-msgstr ""
+msgstr "Regole"
 
 #: views/admin/rules/list.php:13
 msgid "Actions"
-msgstr ""
+msgstr "Azioni"
 
 #: views/admin/rules/list.php:35
 msgid "Edit"
-msgstr ""
+msgstr "Modifica"
 
 #: controllers/RulesController.php:31
 msgid "The rule was successfully deleted."
-msgstr ""
+msgstr "La regola è stata correttamente cancellata."
 
 #: controllers/RulesController.php:44
 msgid "No element was chosen. Please try again, choosing at least one element."
-msgstr ""
+msgstr "Non è stato scelto alcun elemento. Per favore riprova, scegliendo almeno un elemento."
 
 #: controllers/RulesController.php:53
 msgid "edited"
-msgstr ""
+msgstr "modificata"
 
 #: controllers/RulesController.php:53
 msgid "added"
-msgstr ""
+msgstr "aggiunta"
 
 #: controllers/RulesController.php:54
 msgid "The rule was successfully %s."
-msgstr ""
+msgstr "La regola è stata correttamente %s."

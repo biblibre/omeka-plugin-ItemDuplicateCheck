@@ -1,8 +1,13 @@
 <?php echo head(array('title' => __('Add a new rule'))); ?>
+
 <?php echo flash(); ?>
 
 <form action="<?php echo url('item-duplicate-check'); ?>/rules/save" method="post">
     <section class="seven columns alpha">
+		<p>
+			<?php echo __('Choose an <strong>Item Type</strong> to which to apply the rule, then the <strong>Element</strong> (or combination of <strong>Elements</strong>) that make up the rule and cannot be duplicated.'); ?>
+		</p>
+
         <div class="field">
             <div class="two columns alpha">
                 <label for="item_type_id"><?php echo __('Item Type'); ?></label>
@@ -10,9 +15,10 @@
             <div class="five columns omega">
                 <div class="inputs">
                     <select id="item_type_id" name="item_type_id">
-                        <?php foreach ($itemTypes as $itemType): ?>
-                            <option value="<?php echo $itemType->id; ?>">
-                                <?php echo $itemType->name; ?>
+                        <option value="">** <?php echo __('All types'); ?> **</option>
+                        <?php foreach ($itemTypesForSelect as $index => $value): ?>
+                            <option value="<?php echo $index; ?>">
+                                <?php echo $value; ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
